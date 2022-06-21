@@ -2,7 +2,7 @@ import React from 'react'
 
 function Box({colorCode}) {
   return (
-    <div className='box' style={{background: colorCode}} >{colorCode}</div>
+    <div className='box' style={{background: colorCode}} ><h4>{colorCode}</h4></div>
   )
 }
 
