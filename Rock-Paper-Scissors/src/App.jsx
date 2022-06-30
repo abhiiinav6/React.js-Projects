@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import "./App.css"
+import Header from './components/Header'
+
 
 function App() {
-  return(
-    <h1 className='text-3xl text-blue-700'>Namaste World</h1>
+  return (
+    <div className="App w-full h-full">
+      <Header />
+    </div>
   )
 }
 
