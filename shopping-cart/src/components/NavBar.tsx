@@ -21,7 +21,7 @@ function NavBar() {
           </Nav.Link>
         </Nav>
         <Button
-          onclick={openCart}
+          onClick={() => openCart()}
           className="rounded-circle"
           variant="outline-primary"
           style={{ width: "3rem", height: "3rem", position: "relative" }}
