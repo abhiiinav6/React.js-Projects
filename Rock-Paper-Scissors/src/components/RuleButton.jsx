@@ -3,7 +3,7 @@ import Button from './Button'
 
 function RuleButton() {
   return (
-    <div>
+    <div className='relative z-10'>
         <Button text={"RULES"}/>
     </div>
   )

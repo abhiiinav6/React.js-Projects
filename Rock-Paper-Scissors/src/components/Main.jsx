@@ -2,7 +2,7 @@ import React from 'react'
 
 function Main() {
     return (
-        <div className='flex w-full my-8 mx-auto justify-center items-center mt-32'>
+        <div className='flex w-full my-8 mx-auto justify-center items-center mt-32 relative z-10'>
 
 
             <div className='triangle w-full h-3/5 flex items-center flex-col'>
