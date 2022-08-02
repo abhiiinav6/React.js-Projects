@@ -1,7 +1,5 @@
 import { combineReducers } from "redux";
 
-
-
 export default combineReducers({
-    dummy: (()=>10)
+    hello: 10
 })
