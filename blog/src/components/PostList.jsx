@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchPost, fetchUser } from "../actions";
+import { fetchPost } from "../actions";
 import { useSelector, useDispatch } from "react-redux";
 import UserHeader from "./UserHeader"
 
@@ -7,7 +7,6 @@ function PostList() {
   const dispatch = useDispatch()
   const posts = useSelector(state => state.posts)
   useEffect(() => {
-    // fetchPost()
     dispatch(fetchPost())
   }, [])
   
@@ -31,9 +30,5 @@ function PostList() {
     </div>
   );
 }
-// const mapStateToProps = state => ({ posts: state.posts })
-// export default connect(mapStateToProps, {
-//   fetchPost,
-// })(PostList);
 
 export default PostList
