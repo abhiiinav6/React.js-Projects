@@ -16,7 +16,7 @@ function UserHeader({ userId }) {
 
   return (
     <div className="header">
-      {user.name} hii
+      {user?.name}
     </div>
   )
 }
