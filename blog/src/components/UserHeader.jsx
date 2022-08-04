@@ -1,5 +1,5 @@
 import React from 'react'
-import {  useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function UserHeader({ userId }) {
   const user = useSelector(state => {
@@ -11,7 +11,7 @@ function UserHeader({ userId }) {
 
   return (
     <div className="header">
-      {user?.name}
+        {user?.name}
     </div>
   )
 }
