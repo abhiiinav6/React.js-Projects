@@ -1,20 +1,28 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
 function TaskList() {
-    let tasks = useSelector(state=> state.tasks)
-    console.log(tasks)
+  let tasks = useSelector((state) => state.tasks);
+  console.log(tasks);
   return (
-    <div>
-        {tasks&&tasks.map(task=>(
-            <React.Fragment key={task.id}>
-            <input type="checkbox" id={task.id}/>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "left",
+        margin: "auto",
+      }}
+    >
+      {tasks &&
+        tasks.map((task) => (
+          <div key={task.id}>
+            <input type="checkbox" id={task.id} />
             <label htmlFor={task.id}> {task.title} </label>
-            </React.Fragment>
-            
+            <button>Delete</button>
+          </div>
         ))}
     </div>
-  )
+  );
 }
 
-export default TaskList
+export default TaskList;
