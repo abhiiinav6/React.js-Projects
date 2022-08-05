@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTask, toggleTask } from "../actions";
+import { deleteTask, fetchDummyTask, toggleTask } from "../actions";
 
 function TaskList() {
   const dispatch = useDispatch();
@@ -16,7 +16,10 @@ function TaskList() {
     dispatch(deleteTask(id))
   }
 
-  console.log(tasks);
+  useEffect(()=>{
+    dispatch(fetchDummyTask())
+  }, [])
+
 
 
 

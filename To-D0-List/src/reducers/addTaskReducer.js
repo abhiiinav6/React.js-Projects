@@ -11,7 +11,6 @@ const addTaskReducer = (state=[], action) => {
     }
 
     if(action.type === "TOGGLE_TASK"){
-        console.log("hii")
         return state.map(task=>{
             if(task.id===action.payload){
               return {  ...task, completed: !(task.completed)}
@@ -19,6 +18,12 @@ const addTaskReducer = (state=[], action) => {
             return task
         })
     }
+
+    if(action.type === "FETCH_DUMMY_TASK"){
+        console.log("Hii from dumy")
+        return [...action.payload, ...state]
+    }
+
     return state
 }
 
