@@ -25,8 +25,8 @@ function App() {
       <h1>To Do List</h1>
       <TaskList />
       <Input />
-      <h2>Completed Task : {completedTaskCount}</h2>
-      <h2>Total task : {taskCount}</h2>
+      <h3 style={{margin: "0"}}>Completed Task : {completedTaskCount}</h3>
+      <h3 style={{margin: "0"}}>Total task : {taskCount}</h3>
     </div>
   );
 }
