@@ -7,22 +7,21 @@ function TaskList() {
   let tasks = useSelector((state) => state.tasks);
 
   const onChangeHandler = (id) => {
-    console.log("change")
+    console.log("change");
     dispatch(toggleTask(id));
   };
 
+  const onDelete = (task) => {
+    if (task.completed) {
+      dispatch(deleteTask(task.id));
+      return;
+    }
+    alert("First complete the project to delete it.")
+  };
 
-  const onDelete = id => {
-    dispatch(deleteTask(id))
-  }
-
-  useEffect(()=>{
-    dispatch(fetchDummyTask())
-  }, [])
-
-
-
-
+  useEffect(() => {
+    dispatch(fetchDummyTask());
+  }, []);
 
   return (
     <div
@@ -40,6 +39,7 @@ function TaskList() {
               type="checkbox"
               id={task.id}
               onChange={() => onChangeHandler(task.id)}
+              checked={task.completed}
             />
             <label
               htmlFor={task.id}
@@ -50,7 +50,7 @@ function TaskList() {
               {" "}
               {task.title}{" "}
             </label>
-            <button  onClick={()=>onDelete(task.id)} >Delete</button>
+            <button onClick={() => onDelete(task)}>Delete</button>
           </div>
         ))}
     </div>
