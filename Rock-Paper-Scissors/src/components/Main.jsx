@@ -1,26 +1,19 @@
 import React, { useState } from "react";
+import Header from "./Header";
 import Result from "./Result";
 
-function Main({ setScoreFn }) {
+function Main() {
   let arr = ["ROCK", "PAPER", "SCISSOR"];
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [hide, setHide] = useState(false);
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState(null);
 
   function userChoiceFun(e) {
     let id = e.target.id;
     setUserChoice(id.toUpperCase());
     setComputerChoice(arr[Math.floor(Math.random() * arr.length)]);
-    setResult(getResult(userChoice, computerChoice))
-    console.log(result)
-    if (result === 1) {
-      setScoreFn(1);
-    } else if (result === 0) {
-      setScoreFn(-1);
-    } else if (result === 10) {
-      setScoreFn(0);
-    }
+    setResult(getResult(userChoice, computerChoice));
     setHide(true);
   }
 
@@ -51,13 +44,17 @@ function Main({ setScoreFn }) {
     }
   }
   return hide ? (
-    <Result
-      winner={getResult(userChoice, computerChoice)}
-      userChoice={userChoice}
-      computerChoice={computerChoice}
-      setHide={setHide}
-    />
+    <>
+    <Header/>
+      <Result
+        winner={getResult(userChoice, computerChoice)}
+        userChoice={userChoice}
+        computerChoice={computerChoice}
+        setHide={setHide}
+      />
+    </>
   ) : (
+    <></>
     <div
       className={`flex w-full my-8 mx-auto justify-center items-center mt-32 relative z-10 `}
     >
