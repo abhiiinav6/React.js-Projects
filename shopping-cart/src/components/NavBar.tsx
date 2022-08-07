@@ -16,9 +16,6 @@ function NavBar() {
           <Nav.Link as={NavLink} to="/about">
             About
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/store">
-            Store
-          </Nav.Link>
         </Nav>
         <Button
           onClick={() => openCart()}
