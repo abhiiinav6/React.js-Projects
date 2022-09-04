@@ -1,9 +1,13 @@
-import './App.css';
+import "../App.css";
+import Nav from "./Nav";
+import UploadForm from "./UploadForm";
 
 function App() {
   return (
     <div className="App">
-     hello
+      <Nav />
+      Your Images
+      <UploadForm />
     </div>
   );
 }
